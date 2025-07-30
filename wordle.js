@@ -435,9 +435,14 @@ async function startup() {
     box.classList.add('selected');
     state.secret = correctWord.toUpperCase();
     state.hint = wordHint;
-
+    
+    const gameContainer = document.getElementById('gameContainer');
+    gameContainer.addEventListener('click', () => {
+        document.getElementById('mobileInput').focus();
+    });
+    
     registerKeyboardEvents();
-
+    
     console.log(state.secret);
 }
 
